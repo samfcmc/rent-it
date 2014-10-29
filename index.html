@@ -39,7 +39,7 @@
               </div>
               <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <li><a href="#">Media</a></li>
+                  <!--<li><a href="#">Media</a></li>
                   <li><a href="#">Sports</a></li>
                   <li><a href="#">Travel</a></li>
                   <li><a href="#">Kids</a></li>
@@ -47,7 +47,10 @@
                   <li><a href="#">Tech</a></li>
                   <li><a href="#">House</a></li>
                   <li><a href="#">Clothes</a></li>
-                  <li><a href="#">Others</a></li>
+                  <li><a href="#">Others</a></li>-->
+                  <li><a href="#" id="whyLink">Why?</a></li>
+                  <li><a href="#" id="rentLink">Rent</a></li>
+                  <li><a href="#" id="rentOutLink">Rent out</a></li>
                 </ul>
               </div>
             </div>
@@ -61,7 +64,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
-            <img src="static/images/collaborative.jpg" alt="...">
+            <img src="static/images/background.jpg" alt="...">
             <div class="container">
               <div class="carousel-caption">
                 <h2>Rent-it</h2>
@@ -80,34 +83,33 @@
         </p>
       </div>
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" id="whySection">
 
       <div class="row featurette">
         <div class="col-lg-4">
           <i class="fa fa-euro fa-5x"></i>
           <h2>Collaborative consumption</h2>
           <p>
-
+            Together: Use more, save more
           </p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-leaf fa-5x"></i>
           <h2>Good for the environment</h2>
           <p>
-            Sometimes you need something and you buy it just to use once or twice. After a while you just
-            throw it away because you don't need it. Why don't you just rent it and use while you need?
+            Because "the greenest product is the one that already exists"
           </p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-clock-o fa-5x"></i>
           <h2>Temporary need</h2>
           <p>
-
+            Use it only when you need it
           </p>
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <!--<hr class="featurette-divider">
       <div class="row featurette">
         <div class="row">
           <p class="text-center">
@@ -126,18 +128,15 @@
             </button>
           </div>
         </div>
-      </div>
+      </div>-->
 
       <hr class="featurette-divider" id="rentSection">
 
       <div class="row featurette">
         <h2 class="text-center">Do you want to rent something?</h2>
-        <form role="form" class="form-inline">
+        <form role="form" class="form-inline text-center">
           <div class="form-group">
-            <label for="whatRent">
-              What do you would like to rent?
-            </label>
-            <input type="text" class="form-control"
+            <input type="text" class="form-control" placeholder="Ex: Coffe machine"
             id="whatRent"
             placeholder="Something">
           </div>
@@ -151,12 +150,9 @@
 
       <div class="row featurette">
         <h2 class="text-center">Would you like to rent a thing out?</h2>
-        <form role="form" class="form-inline">
+        <form role="form" class="form-inline text-center">
           <div class="form-group">
-            <label for="whatRent">
-              What do you would like to rent out?
-            </label>
-            <input type="text" class="form-control"
+            <input type="text" class="form-control" placeholder="Ex: My nice suit"
             id="whatRent"
             placeholder="Something">
           </div>
@@ -261,13 +257,18 @@
     <script src="js/app.js"></script>
     <script>
       $(function() {
-        $('#rentButton').click(function() {
+        $('#whyLink').click(function() {
+          $('body').scrollTo('#whySection', 1000);
+        });
+
+        $('#rentLink').click(function() {
           $('body').scrollTo('#rentSection', 1000);
         });
 
-        $('#rentOutButton').click(function() {
+        $('#rentOutLink').click(function() {
           $('body').scrollTo('#rentOutSection', 1000);
         });
+
       });
     </script>
   </body>
