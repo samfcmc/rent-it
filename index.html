@@ -26,7 +26,7 @@
     <div class="navbar-wrapper">
 
       <div class="container">
-        <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,53 +39,58 @@
               </div>
               <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                  <!--<li><a href="#">Media</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Travel</a></li>
-                  <li><a href="#">Kids</a></li>
-                  <li><a href="#">Education</a></li>
-                  <li><a href="#">Tech</a></li>
-                  <li><a href="#">House</a></li>
-                  <li><a href="#">Clothes</a></li>
-                  <li><a href="#">Others</a></li>-->
-                  <li><a href="#" id="whyLink">Why?</a></li>
-                  <li><a href="#" id="rentLink">Rent</a></li>
-                  <li><a href="#" id="rentOutLink">Rent out</a></li>
+                  <li>
+                    <a href="#whySection" id="whyLink"
+                    class="scroll-to">
+                      Why?
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#rentSection" id="rentLink"
+                    class="scroll-to">
+                      Rent
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#rentOutSection" 
+                    id="rentOutLink"
+                    class="scroll-to">
+                      Rent out
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-      </div>
+    </div>
 
-      <div class="carousel slide" data-ride="carousel">
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="static/images/background.jpg" alt="...">
-            <div class="container">
-              <div class="carousel-caption">
-                <h2>Rent-it</h2>
-                <p>Your portal for renting</p>
-              </div>
+    <header class="carousel slide" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="static/images/101H.jpg"
+          class="overlay-bg">
+          <div class="container">
+            <div class="carousel-caption">
+              <h2>Rent-it</h2>
+              <p>Your portal for renting</p>
             </div>
           </div>
         </div>
       </div>
+    </header>
 
-
-    <div class="container marketing">
-      <div class="row">
+    <main class="container marketing">
+      <section class="row">
         <p>
           This is a website for...
         </p>
-      </div>
+      </section>
 
-      <hr class="featurette-divider" id="whySection">
-
-      <div class="row featurette">
+      <section class="row featurette section" 
+      id="whySection">
         <div class="col-lg-4">
           <i class="fa fa-euro fa-5x"></i>
           <h2>Collaborative consumption</h2>
@@ -107,74 +112,66 @@
             Use it only when you need it
           </p>
         </div>
-      </div>
+      </section>
 
-      <!--<hr class="featurette-divider">
-      <div class="row featurette">
-        <div class="row">
-          <p class="text-center">
-            This is a website for who want to rent and who want to rent out
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <button class="btn btn-info" id="rentButton">
-              I would like to rent something that I need
+      <section class="row featurette section"
+      id="rentSection">
+        <header>
+          <h2 class="text-center">Do you want to rent something?</h2>
+        </header>
+        <main>
+          <form role="form" 
+          class="form-inline text-center">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Ex: Coffe machine"
+              id="whatRent"
+              placeholder="Something">
+            </div>
+            <button id="rentButton"
+            class="btn btn-default" data-toggle="modal" data-target="#rentMailModal">
+              <span class="glyphicon glyphicon-search"></span>
             </button>
-          </div>
-          <div class="col-lg-6">
-            <button class="btn btn-info" id="rentOutButton">
-              I have something that I would like to rent out and make some money
+          </form>
+        </main>
+      </section>
+
+      <section class="row featurette section
+      last-section"
+      id="rentOutSection">
+        <header>
+          <h2 class="text-center">
+            Would you like to rent a thing out?
+          </h2>
+        </header>
+        <main>
+          <form role="form" 
+          class="form-inline text-center">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Ex: My nice suit"
+              id="whatRentOut"
+              placeholder="Something">
+            </div>
+            <button id="rentOutButton" 
+            class="btn btn-default"
+            data-toggle="modal" 
+            data-target="#rentMailModal">
+              <span class="glyphicon glyphicon-euro">
+              </span>
             </button>
-          </div>
-        </div>
-      </div>-->
+          </form>
+        </main>
+        
+      </section>
 
-      <hr class="featurette-divider" id="rentSection">
+    </main>
 
-      <div class="row featurette">
-        <h2 class="text-center">Do you want to rent something?</h2>
-        <form role="form" class="form-inline text-center">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Ex: Coffe machine"
-            id="whatRent"
-            placeholder="Something">
-          </div>
-          <button id="rentButton"
-          class="btn btn-default" data-toggle="modal" data-target="#rentMailModal">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </form>
-      </div>
-
-      <hr class="featurette-divider" id="rentOutSection">
-
-      <div class="row featurette">
-        <h2 class="text-center">Would you like to rent a thing out?</h2>
-        <form role="form" class="form-inline text-center">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Ex: My nice suit"
-            id="whatRentOut"
-            placeholder="Something">
-          </div>
-          <button id="rentOutButton" class="btn btn-default"
-          data-toggle="modal" data-target="#rentMailModal">
-            <span class="glyphicon glyphicon-euro"></span>
-          </button>
-        </form>
-      </div>
-
-    </div>
-
-    <hr class="featurette-divider" id="rentOutSection">
-
-    <div class="container">
-      <div class="footer">
+    <footer class="container section footer">
+      <div class="row">
         <p>
           © Rent-it
         </p>
       </div>
-    </div>
+    </footer>
 
     <!-- Ask for E-mail Modal -->
     <div class="modal fade" id="rentMailModal" tabindex="-1" role="dialog" aria-labelledby="mailModalLabel"
@@ -262,18 +259,6 @@
 
     <script>
       $(function() {
-        $('#whyLink').click(function() {
-          $('body').scrollTo('#whySection', 1000);
-        });
-
-        $('#rentLink').click(function() {
-          $('body').scrollTo('#rentSection', 1000);
-        });
-
-        $('#rentOutLink').click(function() {
-          $('body').scrollTo('#rentOutSection', 1000);
-        });
-
         /*
          * Using segment.io to track
          */
@@ -286,6 +271,19 @@
         $('#rentOutButton').click(function() {
           var item = $('#whatRentOut').val();
           analytics.track('Rent Out', {item: item});
+        });
+
+        $('.scroll-to').each(function(el) {
+          $(this).click(function(event) {
+            var href = $(this).attr('href');
+            /*$('body').scrollTo(href, 1000, {offsetTop: 500});*/
+            $('html, body').animate(
+              {scrollTop: $(href).offset().top - 100}, 
+              1000, 
+              function(){
+                window.location.hash = href;
+              });
+          });
         });
 
       });
