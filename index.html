@@ -148,52 +148,62 @@
 
     <main class="container marketing">
       <section class="row section" id="whatSection">
-        <p>
-          Have you ever needed something that you
-          couldn't afford? What about buying things that you
-          only need for a short while?
-        </p>
-        <p>
-          Your problems are no more! We present to you 
-          <b>Rent-it</b> an online platform where you can 
-          rent anything you need and rent out your own 
-          belongings!
-        </p>
-        <p>It's simple, free and available to you right
-          now! 
-          <b>
-            <a href="#rentSection" class="scroll-to">
-              Join us now
-            </a>
-          </b>
-          , your wallet will
-          be thankful!
-        </p>
+        <header>
+          <h2 class="text-center">What is Rent-it?</h2>
+        </header>
+        <main>
+          <p>
+            Have you ever needed something that you
+            couldn't afford? What about buying things that you
+            only need for a short while?
+          </p>
+          <p>
+            Your problems are no more! We present to you 
+            <b>Rent-it</b> an online platform where you can 
+            rent anything you need and rent out your own 
+            belongings!
+          </p>
+          <p>It's simple, free and available to you right
+            now! 
+            <b>
+              <a href="#rentSection" class="scroll-to">
+                Join us now
+              </a>
+            </b>
+            , your wallet will
+            be thankful!
+          </p>
+        </main>
       </section>
 
       <section class="row featurette section" 
       id="whySection">
-        <div class="col-lg-4">
-          <i class="fa fa-euro fa-5x"></i>
-          <h2>Collaborative consumption</h2>
-          <p>
-            Together: Use more, save more
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <i class="fa fa-leaf fa-5x"></i>
-          <h2>Good for the environment</h2>
-          <p>
-            Because "the greenest product is the one that already exists"
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <i class="fa fa-clock-o fa-5x"></i>
-          <h2>Temporary need</h2>
-          <p>
-            Use it only when you need it
-          </p>
-        </div>
+        <header>
+          <h2 class="text-center">Why?</h2>
+        </header>
+        <main>
+          <div class="col-lg-4">
+            <i class="fa fa-euro fa-5x"></i>
+            <h2>Collaborative consumption</h2>
+            <p>
+              Together: Use more, save more
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <i class="fa fa-leaf fa-5x"></i>
+            <h2>Good for the environment</h2>
+            <p>
+              Because "the greenest product is the one that already exists"
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <i class="fa fa-clock-o fa-5x"></i>
+            <h2>Temporary need</h2>
+            <p>
+              Use it only when you need it
+            </p>
+          </div>
+        </main>
       </section>
 
       <section class="row featurette section"
@@ -202,8 +212,10 @@
           <h2 class="text-center">Do you want to rent something?</h2>
         </header>
         <main>
-          <form role="form" 
-          class="form-inline text-center">
+          <form role="form"
+          id="rentForm" 
+          class="form-inline text-center"
+          onsubmit="openModal('#rentMailModal')">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Ex: Coffe machine"
               id="whatRent"
@@ -227,7 +239,9 @@
         </header>
         <main>
           <form role="form" 
-          class="form-inline text-center">
+          class="form-inline text-center"
+          id="rentOutForm"
+          onsubmit="openModal('#rentOutMailModal')">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Ex: My nice suit"
               id="whatRentOut"
@@ -364,8 +378,12 @@
               });
           });
         });
-
       });
+
+      function openModal(modalSelector) {
+        $(modalSelector).modal('show');
+        return false;
+      }
     </script>
   </body>
 </html>
