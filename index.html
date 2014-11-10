@@ -209,22 +209,27 @@
       <section class="row featurette section"
       id="rentSection">
         <header>
-          <h2 class="text-center">Do you want to rent something?</h2>
+          <h2 class="text-center">
+            Do you want to rent something?
+          </h2>
         </header>
         <main>
           <form role="form"
           id="rentForm" 
           class="form-inline text-center"
           onsubmit="openModal('#rentMailModal')">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Ex: Coffe machine"
-              id="whatRent"
-              placeholder="Something">
-            </div>
-            <button id="rentButton"
-            class="btn btn-default" data-toggle="modal" data-target="#rentMailModal">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <input type="text" class="form-control" placeholder="Ex: Coffe machine"
+                id="whatRent">
+                <a href="http://eepurl.com/7dRxz" 
+                id="rentButton"
+                class="btn btn-default">
+                  <span class="glyphicon glyphicon-search">
+                  </span>
+                </a>
+              </span>
+            </div><!-- /input-group -->
           </form>
         </main>
       </section>
@@ -242,21 +247,21 @@
           class="form-inline text-center"
           id="rentOutForm"
           onsubmit="openModal('#rentOutMailModal')">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Ex: My nice suit"
-              id="whatRentOut"
-              placeholder="Something">
-            </div>
-            <button id="rentOutButton" 
-            class="btn btn-default"
-            data-toggle="modal" 
-            data-target="#rentMailModal">
-              <span class="glyphicon glyphicon-euro">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <input type="text" class="form-control" placeholder="Ex: My nice suit"
+                id="whatRentOut"
+                placeholder="Something">
+                <a id="rentOutButton" 
+                class="btn btn-default"
+                href="http://eepurl.com/7dRxz">
+                  <span class="glyphicon glyphicon-euro">
+                  </span>
+                </a>
               </span>
-            </button>
+            </div>
           </form>
         </main>
-        
       </section>
 
     </main>
@@ -359,11 +364,13 @@
         $('#rentButton').click(function() {
           var item = $('#whatRent').val();
           analytics.track('Rent', {item: item});
+          console.log('Click tracked');
         });
 
         $('#rentOutButton').click(function() {
           var item = $('#whatRentOut').val();
           analytics.track('Rent Out', {item: item});
+          console.log('Click tracked');
         });
 
         $('.scroll-to').each(function(el) {
@@ -379,11 +386,6 @@
           });
         });
       });
-
-      function openModal(modalSelector) {
-        $(modalSelector).modal('show');
-        return false;
-      }
     </script>
   </body>
 </html>
